@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<% @products.each do | product | %>
+			<div class="col-md-3 mb-4">
+				<div class="card">
+					<img class="card-img-top" src="<%= product.photo %>" alt="Card image cap">
+					<div class="card-body text-center">
+						<h5 class="card-title">Nombre: <%= product.name %></h5>
+						<p class="card-text">Precio: <%= product.price %></p>
+						<a href="<%= product_orders_path(product) %>" class="btn btn-success" data-method="post"><i class="fas fa-cart-plus"></i></a>
+				 	</div>
+				</div>		  
+			</div>
+		<% end %>
+	</div>
+</div>
